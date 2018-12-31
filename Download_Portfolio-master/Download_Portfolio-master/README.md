@@ -6,7 +6,7 @@
         <li>
             <h3>개발</h3>
             <h4>front-end : html5,css,jQuery,JavaScript</h4>
-            <h4>back-end : php,jsp,node,js</h4>
+            <h4>back-end : php</h4>
         </li>
         <li>
             <h3>디자인</h3>

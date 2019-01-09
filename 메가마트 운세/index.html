@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>메가마트</title>
+
+	<!--meta:seting-->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<!--meta:facebook og-->
+	
+
+    <!--meta:트위터 og-->
+    <meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:site" content="" />
+	<meta name="twitter:creator" content="" />
+	<meta name="twitter:title" content="title" />
+	<meta name="twitter:description" content="">
+	<meta name="twitter:image" content="" />
+	<meta name="twitter:url" content="" />
+
+	<!--css-->
+	<link rel="stylesheet" href="res/css/lib.css"/><!--lib css-->
+	<link rel="stylesheet" href="res/css/css.css?ver=1"><!--기본 css-->
+	
+	<script src="/lib/jquery/jquery-3.3.1.min.js"></script> 
+	<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script> <!--kakao-->
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	
+</head>
+<body>
+	<div class="wrap">
+		 <section id="section1" class="section_wrap w100">
+	        <img src ="res/images/img_01.png">
+	        <div class="content_wrap">
+	            <div class="start_btn">
+	            	<img src='res/images/btn_start_nor.png'>
+	            </div>
+	            <div class="share_wrap">
+	            	<img src='res/images/icon_kakao.png' id="sns_kakaotalk">
+	            	<img src='res/images/icon_facebook.png' id="sns_facebook">
+	            </div>
+	        </div>
+	    </section>
+	    <!-- <div class="loader"></div> -->
+	</div>
+	<script src="res/js/lib.js"></script>	
+	<script>
+		var heart_option  = {
+	    	max:3,
+	    	gap:0,
+	    	wrap:$(".heart_wrap"),
+	    	on:'res/images/icon_heart_on.png',
+	    	off:'res/images/icon_heart_off.png'
+	    }
+		var option = {
+			rank : false,
+			heart : false,
+			coin : false,
+			sns_count : false,
+			rank_tag : $(".rank"),
+			score_tag : $(".score"),
+			coin_tag : $(".coin"),
+			project : 'megamart',
+			code : 'ZZ40'
+		};
+
+		var bnt  = new tag({
+			start : $(".start_btn"),
+			kakao : $("#sns_kakaotalk"),
+			facebook : $("#sns_facebook"),
+		});
+
+		var url = {
+        	op : "/B3CFD566-6F4C-4EED-805A-C0CBB86E6C3D/",
+        	first : "getGameInfo.php",
+        	share : "share.php",
+    	}
+
+    	var sns = {
+	        sns_title : "[Joyfull 메가마트 토정비결 보러가기] 신선도사의 신선한 점꽤!",
+	        sns_url : "http://home.megamart.com/appsetup",
+	        sns_desc : "2019 메가 토정비결이 궁금하시면 신선도사를 찾아오세요!!",
+	        sns_image : "https://www.doit5.com/hvm/event/megamart/ZZ40/res/images/share.png",
+    	}
+
+		setTing(url, option, heart_option, sns);
+
+	    Kakao.init('b4dd16a5dba545c229707268fa130671');
+	    Kakao.Link.createDefaultButton({
+            container: '#sns_kakaotalk',
+            objectType: 'feed',
+            content: {
+                title: sns_op.sns_title,
+                description: sns_op.sns_desc,
+                imageUrl: sns_op.sns_image,
+                imageWidth: 600,
+                imageHeight: 315,
+                link: {
+                    mobileWebUrl: sns_op.sns_url,
+                    webUrl: sns_op.sns_url
+                }
+            }
+        })
+
+
+	</script>
+
+</body>
+</html>

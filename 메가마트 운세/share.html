@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<!-- saved from url=(0062)https://dev-newm.shinhancard.com/conts/landing/FAN_checker.jsp -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<!-- Facebook START -->
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="doit5"/>
+<meta property="og:title" content="[Joyfull 메가마트 토정비결 보러가기] 신선도사의 신선한 점꽤!" />
+<meta property="og:description" content="2019 메가 토정비결이 궁금하시면 신선도사를 찾아오세요!!" />
+<meta property="og:url" content="https://www.doit5.com/hvm/event/megamart/ZZ40/share.html" />
+<meta property="og:image" content="https://www.doit5.com/hvm/event/megamart/ZZ40/res/images/share.png" />
+<meta property="og:image:width" content="600" />
+<meta property="og:image:height" content="315" />
+<!-- <meta property="og:image:width" content="720"/> -->
+<!-- <meta property="og:image:height" content="720"/> -->
+<!-- Facebook END -->
+<title>메가마트</title>
+<script language="javascript" type="text/javascript">
+var loadDateTime = new Date();
+var AgentType = navigator.userAgent;
+var chrome_ver = 0;
+
+var reg = new RegExp("Chrome/" + "([0-9]{1,})(\\.{0,}[0-9]{0,1})");
+if (reg.exec(AgentType) != null) chrome_ver = parseInt(RegExp.$1 + RegExp.$2);
+var deep_link =  "http://home.megamart.com/appsetup"
+var checker = {
+              iphone:       AgentType.match(/(iPhone|iPod)/),
+              ipad:         AgentType.match(/iPad/),
+              android:      AgentType.match(/Android/),
+              galaxyS:      AgentType.match(/SHW-M110S/),
+              galaxyNote:   AgentType.match(/SHV-E160S/),
+              galaxyNexus:  AgentType.match(/SHW-M420S/),
+              galaxyTab89:  AgentType.match(/SHV-E140S/),
+              galaxyTab101: AgentType.match(/SHW-M380S/)
+            };
+
+    function checkApplicationInstall( callPage ) {
+        // 아이패드인 경우
+        if( checker.ipad) {
+        	setTimeout("checkApplicationInstall_callback_ios()", 10);
+       		
+       		window.location = deep_link;
+        }
+        else if( checker.ipad || checker.iphone ) {
+        	setTimeout("checkApplicationInstall_callback_ios()", 10);
+       		
+        	window.location = deep_link;
+        }
+        // 안드로이드 탭인 경우
+        else if(checker.galaxyTab89 || checker.galaxyTab101) {
+        	if(chrome_ver!=""&&chrome_ver>24){ //크롬 25버전 이상 대응
+        		location.href=deep_link;
+        	} else {
+        		document.checkframe.location = deep_link;
+        		setTimeout("checkApplicationInstall_callback()", 1000);
+        	}
+        }
+        // 안드로이드인 경우 
+        else {
+        	if(chrome_ver!=""&&chrome_ver>24){//크롬 25버전 이상 대응
+        		location.href=deep_link;
+        	} else {
+        		document.checkframe.location = deep_link;
+        		setTimeout("checkApplicationInstall_callback()", 1000);
+        	} 
+        }
+    }
+
+    function checkApplicationInstall_callback_ios() {
+        if ( checker.ipad )
+            window.location = deep_link;
+        else if ( checker.iphone )
+            window.location = deep_link;
+        else
+            alert( "지원하지 않는 기기입니다." );
+    }
+    
+    function checkApplicationInstall_callback() {
+        var timeOutDateTime = new Date();
+        
+        if (timeOutDateTime - loadDateTime < 3000) {
+            if (confirm("앱을 설치하시겠습니까?")) {
+
+                if ( checker.android && (checker.galaxyTab101 || checker.galaxyTab89) )
+                    window.location = deep_link;
+                else if ( checker.android )
+                    window.location = deep_link;
+                else
+                	alert( "지원하지 않는 기기입니다." );
+            }
+        }
+    }
+</script>
+</head>
+<body>
+<iframe id="checkframe" name="checkframe" title="빈프레임" src="" width="0" height="0" style="display:none;"></iframe>
+
+<script language="javascript">
+
+	checkApplicationInstall('SHCM_003_016');
+</script></body></html>

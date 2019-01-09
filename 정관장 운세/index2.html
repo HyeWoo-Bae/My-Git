@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>정관장</title>
+
+	<!--meta:seting-->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<!--meta:facebook og-->
+	
+
+    <!--meta:트위터 og-->
+    <meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:site" content="" />
+	<meta name="twitter:creator" content="" />
+	<meta name="twitter:title" content="title" />
+	<meta name="twitter:description" content="">
+	<meta name="twitter:image" content="" />
+	<meta name="twitter:url" content="" />
+
+	<!--css-->
+	<link rel="stylesheet" href="res/css/lib.css"/><!--lib css-->
+	<link rel="stylesheet" href="res/css/css.css?ver=2"><!--기본 css-->
+	
+	<script src="/lib/jquery/jquery-3.3.1.min.js"></script> 
+	<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script> <!--kakao-->
+	<!-- 애널리 틱스 -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-96158169-20"></script>
+	<script>
+		 window.dataLayer = window.dataLayer || [];
+		 function gtag(){dataLayer.push(arguments);}
+		 gtag('js', new Date());
+
+		 gtag('config', 'UA-96158169-20');
+	</script>
+</head>
+<body>
+	<div class="wrap">
+		<div class="popup">
+			<div class="border_wrap">
+				<div>
+					<div class="number_co">
+						<span>[쿠폰 번호]</span>
+						<br><br>
+						<span>JUNGMALL2019APP</span>
+					</div>
+					<br>
+
+					<div class="line_border"></div>
+					<br>
+					<ul class="contet">
+						<li>[쿠폰 발급기간] 19.01.04 ~ 19.02.10</li><br>
+						<li>[쿠폰 사용기간] 발급일로부터 30일</li><br>
+						<li>
+							[쿠폰 사용방법]<br>
+			정몰 앱 다운로드 >> 앱 로그인 >> 마이페이지 >> 쿠폰번호등록 후 사용가능
+						</li><br>
+						<li>
+							[쿠폰 유의사항]<br>
+							정몰 앱 에서만 사용가능 (PC 로그인 시 사용불가, 1인 1회 한정)
+						</li><br>
+					</ul>
+					<div class="close_btn">
+						<button onClick="border_wrap()">닫기> </button>
+					</div> 
+				</div>
+			</div>
+		</div>
+		<section id="section1" class="section_wrap w100">
+	        <img src ="res/images/img_01.png">
+	        <div class="content_wrap">
+	            <div class="start_btn">
+	            	<img src='res/images/btn_start_nor.png'>
+	            </div>
+	            <div class="share_btn" onClick="location.href='https://www.kgcshop.co.kr/app/download?utm_source=non_members_game&utm_campaign=mini_game&utm_medium=display&utm_content=button&utm_term=game'">
+	      			<img src="res/images/btn_app_nor.png">
+	      		</div>
+	            
+	        </div>
+	    </section>
+	    <section id="section2" class="section_wrap w100">
+	        <img src ="res/images/img_02.png">
+	      	<div class="content_wrap">
+	      		<div class="share_wrap">
+	            	<img src='res/images/icon_kakao.png' id="sns_kakaotalk">
+	            	<img src='res/images/icon_facebook.png' id="sns_facebook">
+	            </div>
+	            <div class="vo2">
+	      			<img src="res/images/movie_02.png" onClick="location.href='https://www.youtube.com/watch?v=XtpE7NZ5Ihc'">
+	      		</div>
+	      		<div class="vo1">
+	      			<img src="res/images/movie_01.png" onClick="location.href='https://www.youtube.com/watch?v=qeqTz6itlR4'">
+	      		</div>
+	      	</div>
+	    </section>    
+	    <!-- <div class="loader"></div> -->
+	</div>
+	<script src="res/js/lib.js"></script>	
+	<script>
+		var heart_option  = {
+	    	max:3,
+	    	gap:0,
+	    	wrap:$(".heart_wrap"),
+	    	on:'res/images/icon_heart_on.png',
+	    	off:'res/images/icon_heart_off.png'
+	    }
+		var option = {
+			rank : false,
+			heart : false,
+			coin : false,
+			sns_count : false,
+			rank_tag : $(".rank"),
+			score_tag : $(".score"),
+			coin_tag : $(".coin"),
+			project : 'kgc',
+			code : 'ZZ39'
+		};
+
+		var bnt  = new tag({
+			start : $(".start_btn"),
+			kakao : $("#sns_kakaotalk"),
+			facebook : $("#sns_facebook"),
+		});
+
+		var url = {
+        	op : "/B3CFD566-6F4C-4EED-805A-C0CBB86E6C3D/",
+        	first : "getGameInfo.php",
+        	share : "share.php",
+    	}
+
+    	var sns = {
+	        sns_title : "[2019년 정몰 토정비결]",
+	        sns_url : "https://www.kgcshop.co.kr/app/download?utm_source=non_members_game&utm_campaign=mini_game&utm_medium=display&utm_content=button&utm_term=game",
+	        sns_desc : "미치도록 핫한 2019년 정도사 토정비결 보러가기 GO! GO!",
+	        sns_image : "https://www.doit5.com/hvm/event/kgc/ZZ39/res/images/share.png",
+    	}
+
+		setTing(url, option, heart_option, sns);
+
+	    Kakao.init('2869575ab318389e755bbd6057a7ba17');
+	    Kakao.Link.createDefaultButton({
+            container: '#sns_kakaotalk',
+            objectType: 'feed',
+            content: {
+                title: sns_op.sns_title,
+                description: sns_op.sns_desc,
+                imageUrl: sns_op.sns_image,
+                imageWidth: 600,
+                imageHeight: 315,
+                link: {
+                    mobileWebUrl: sns_op.sns_url,
+                    webUrl: sns_op.sns_url
+                }
+            }
+        });
+
+        function border_wrap(){
+			$(".popup").hide();
+        }
+
+
+	</script>
+
+</body>
+</html>

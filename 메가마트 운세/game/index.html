@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta charset="UTF-8">
+
+	<!--meta:facebook og-->
+
+
+    <!--meta:트위터 og-->
+    <meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:site" content="" />
+	<meta name="twitter:creator" content="" />
+	<meta name="twitter:title" content="title" />
+	<meta name="twitter:description" content="">
+	<meta name="twitter:image" content="" />
+	<meta name="twitter:url" content="" />
+
+	<!--css-->
+	<link rel="stylesheet" href="res/css/css.css?ver=1"> 
+
+
+	<!--js-->
+	<script src="../../../../../lib/jquery/jquery-3.3.1.min.js"></script> 
+	<script type="text/javascript" src="https://cdn.rawgit.com/alexgibson/shake.js/master/shake.js"></script>
+
+	<!--<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script> kakao-->
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-130020094-7"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-130020094-7');
+	</script>
+
+	
+</head>
+<body>
+	<div class="shake_box">
+		<img src="res/images/mix-3-bg.png" class="sh_bg">
+		<img src="res/images/mix-3-pa.png" class="show_img">
+		<img src="res/images/mix-3-guide.png" class="guid">
+	</div>
+	<div class="loding_wrap">
+		<img src="res/images/loading1-1.png">
+		<div class="loader"></div>
+	</div>
+	<div class="user_info_wrap">
+		<div class="ending_wrap">
+			<img src="res/images/mozo-panel.png" class="ending">
+			<div class="exit" onClick="landing()"></div>
+		</div>
+		<div class="user_wrap">
+			<div>
+				<div class="text_user">
+					<p>월별 운세</p>
+					<div class="text3"></div>
+					<p>전반기 운세</p>
+					<div class="text1"></div>
+					<p>후반기 운세</p>
+					<div class="text2"></div>
+				</div>
+				<div class="go_end" onclick="end()">
+					<img src="res/images/btn-get-mozo.png">
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="popup">
+		<div class="user_wrap">
+			<div>
+				<table class="tables">
+					<tr>
+						<td class="title">성별</td>
+						<td class="input">
+							<input type="radio" id='m' value="남" name="ck" class="ins">
+							<label for='m'><span></span>남</label>
+							<input type="radio" id='w' value="여" name="ck" class="ins">
+							<label for='w'><span></span>여</label>
+						</td>
+					</tr>	
+					<tr>
+						<td  class="title">생년월일</td>
+						<td>
+							<input type="radio" id='r1' value="양력" name="day" class="ins">
+							<label for='r1'><span></span>양력</label>
+
+							<input type="radio" id='r2' value="음력(평달)" name="day" class="ins">
+							<label for='r2'><span></span>음력(평달)</label>
+
+							<input type="radio" id='r3' value="음력(윤달)" name="day" class="ins">
+							<label for='r3'><span></span>음력(윤달)</label>
+						</td>
+					</tr>	
+					<tr>
+						<td></td>
+						<td class="input">
+							<input type="date" id='d1'  class="ins">
+						</td>
+					</tr>
+					<tr>
+						<td class="title">태어난시</td>
+						<td>
+							<input type="checkbox" id='c1' value="모름" onclick="check()" class="ins">
+							<label for='c1'><span></span>모름</label>
+						</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td class="input">
+							<input type="time" id='h1' class="timer" class="ins">
+						</td>
+					</tr>
+				</table>
+				<div class="result_btn_wrap">
+					<img src="res/images/btn-confirm-nor.png" onclick="User_api()">
+				</div>
+			</div>
+		</div>
+	</div>
+	<section id="section1">
+		<div class="bg">
+			<img src='res/images/bg.png' class="bg_img">
+			<div class="wrap">
+				<img src="res/images/intro-1.png" class="ch">
+				<img src="res/images/cloud.png" class="cover">
+			</div>
+			<div class="skip" onclick="User_info('true')">
+				<img src="res/images/skip-btn.png">
+			</div>
+		</div>
+	</section>
+	<script src="res/js/size.js"></script>
+	<script src="res/js/js.js"></script>
+</body>
+</html>

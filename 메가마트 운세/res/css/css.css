@@ -1,0 +1,63 @@
+.start_btn{
+	bottom:23%;
+	width:72.5%;
+	left:13.75%;
+}
+
+.start_btn > img{
+	width:100%;
+}
+
+.share_wrap{
+	width:50%;
+	bottom:4%;
+	left:25%;
+}
+
+.share_wrap > img:first-child{
+	float:left;
+}
+
+
+.share_wrap > img:last-child{
+	float:right;
+}
+
+.share_wrap > img{
+	width:40.3%;
+
+}
+
+.vo1, .vo2{
+	width:85%;
+	left:7.5%;
+}
+
+.vo1{
+	top:12%;
+}
+
+.vo2{
+	top:50%;
+}
+
+.vo1 > img{
+	width:100%;
+}
+
+.vo2 > img{
+	width:100%;
+}
+
+.share_btn{
+	bottom:0%;
+	width:85%;
+	left:7.5%;
+}
+
+.share_btn > img{
+	width:100%;
+}
+
+
+

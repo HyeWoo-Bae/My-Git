@@ -1,0 +1,139 @@
+.start_btn{
+	bottom:16%;
+	width:69.5%;
+	left:15.25%;
+}
+
+.start_btn > img{
+	width:100%;
+}
+
+.share_wrap{
+	width:50%;
+	top:10%;
+	left:25%;
+}
+
+.share_wrap > img:first-child{
+	float:left;
+}
+
+
+.share_wrap > img:last-child{
+	float:right;
+}
+
+.share_wrap > img{
+	width:40.3%;
+
+}
+
+.vo1, .vo2{
+	width:85%;
+	left:7.5%;
+}
+
+.vo1{
+	top:68%;
+}
+
+.vo2{
+	top:35%;
+}
+
+.vo1 > img{
+	width:100%;
+}
+
+.vo2 > img{
+	width:100%;
+}
+
+.share_btn{
+	bottom:2%;
+	width:85%;
+	left:6.25%;
+}
+
+.share_btn > img{
+	width:100%;
+}
+
+.popup{
+	z-index: 30;
+    width: 500px;
+    background: #fff;
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 10%;
+    box-shadow: 5px 0px 20px 0px #333;
+}
+
+.border_wrap{
+	background:#702622;
+	width:100%;
+	height:100%;
+	padding:3%;
+}
+
+.border_wrap > div{
+	background:#fff;
+	font-family: "맑은 고딕";
+	padding:7%;
+}
+
+.number_co{
+	width:100%;
+	text-align:center;
+	color:#702622;
+}
+
+.number_co > span:first-child{
+	font-size:1.5em;
+}
+
+.number_co > span:last-child{
+	font-size:2em;
+}
+
+.line_border{
+	width:100%;
+	border-top: 5px solid #702622;
+    border-top-style: dashed;
+}
+
+.contet{
+	text-align: center;
+}
+
+.contet span{
+	margin-top:2%;
+}
+
+.close_btn{
+	width:100%;
+	padding:5%;
+}
+
+.close_btn > button{
+	width: 35%;
+    display: block;
+    height: 40px;
+    border:none;
+    background:#702622;
+    color:#fff;
+    font-size:1.1em;
+}
+
+@media(max-width:720px){
+	.popup{width:90%;}
+	.close_btn{padding:0%;}
+}
+
+@media(max-width:370px){
+	.number_co > span:last-child{font-size:1.5em;font-weight:bold;}
+}
+
+
+

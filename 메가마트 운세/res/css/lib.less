@@ -1,0 +1,81 @@
+@baseimg : '../images/pt.png';
+@font-face {
+    font-family: 'sme';
+    /*src: url(../font/BMJUA_ttf_game.woff) format('woff'),
+         url(../font/BMJUA_ttf_game.ttf) format('truetype');*/
+}
+
+*{
+	margin:0 auto;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+	font-family: sme
+}
+
+.w100{
+	width:100%;
+}
+
+.w95{
+	width:95%;
+}
+
+.w90{
+	width:90%;
+}
+
+.w80{
+	width:80%;
+}
+
+.w70{
+	width:70%;
+}
+
+.w60{
+	width:60%;
+}
+
+.w50{
+	width:50%;
+}
+
+.w40{
+	width:40%;
+}
+
+.w30{
+	width:30%;
+}
+
+.w20{
+	width:20%;
+}
+
+.w10{
+	width:10%;
+}
+
+body{
+	background-image : url("@{baseimg}");
+}
+
+/*
+.wrap{
+	margin:0 auto !important;width:720px;
+	.section_wrap{ width:100%;
+		img{width:100%;display: block;}
+		.content_wrap{
+			div{position:absolute;top:0%}
+		}
+	}
+}
+*/
+
+@media(max-width:720px){
+	.wrap{width:100%;}
+}
+
+
+/*기본 구조 여기까지*/

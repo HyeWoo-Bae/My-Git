@@ -90,7 +90,7 @@
 }
 
 .number_co > span:first-child{
-	font-size:1.5em;
+	font-size:1.3em;
 }
 
 .number_co > span:last-child{
@@ -125,6 +125,8 @@
     color:#fff;
     font-size:1.1em;
 }
+
+
 
 @media(max-width:720px){
 	.popup{width:90%;}

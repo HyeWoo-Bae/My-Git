@@ -13,6 +13,19 @@ $(document).ajaxStart(function(){
 	$(".ajax_start").show();
 });
 
+
+$("#d1").click(function(){
+	$("#ui-datepicker-div").css({"display":"block"})
+})
+
+$("#h1").click(function(){
+	$('#ui-timepicker-div').css({"display":"block"})
+})
+
+
+
+
+
 function query_to_hash() {
     var j, q;
     q = window.location.search.replace(/\?/, "").split("&");
@@ -27,28 +40,56 @@ function query_to_hash() {
 user_key = query_to_hash();
 
 
+$("#d1").blur();
+
 
 (function(){
-	var agent = navigator.userAgent.toLowerCase();
+	$( "#d1" ).datepicker({
+		changeMonth: true,
+		changeYear: true,
+		dateFormat: 'yy-mm-dd',
+		prevText: '<',
+    	nextText: '>',
+    	monthNames: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+    	monthNamesShort: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+    	dayNames: ['일', '월', '화', '수', '목', '금', '토'],
+    	dayNamesShort: ['일', '월', '화', '수', '목', '금', '토'],
+    	dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
+    	showMonthAfterYear: true,
+    	yearSuffix: '년',
+    	yearRange: "-100:+0",
+    	closeText: '&times;'
+	}).on('change', function(){
+         $('.datepicker').hide();
+    });
 
-	if(agent.indexOf("firefox") != -1 ||  (navigator.appName == 'Netscape' && agent.indexOf('trident') != -1) || (agent.indexOf("msie") != -1)){
-		$( "#d1" ).datepicker({
-			changeMonth: true,
-			changeYear: true,
-			dateFormat: 'yy-mm-dd',
-			prevText: '이전 달',
-        	nextText: '다음 달',
-        	monthNames: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
-        	monthNamesShort: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
-        	dayNames: ['일', '월', '화', '수', '목', '금', '토'],
-        	dayNamesShort: ['일', '월', '화', '수', '목', '금', '토'],
-        	dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
-        	showMonthAfterYear: true,
-        	yearSuffix: '년',
-        	yearRange: "-100:+0"
-		});	
-		 $('#h1').timepicker();
-	}
+
+
+
+	var agent = navigator.userAgent.toLowerCase();
+	var ua = window.navigator.userAgent;
+    var msie = ua.indexOf("MSIE ");
+
+    if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./))  // If Internet Explorer, return version number
+    {
+        $('#h1').timepicker().on('change', function(){
+        	$('#ui-timepicker-div').hide();
+    	});
+    }
+    else if(navigator.userAgent.search ( "Safari") >= 0 && navigator.userAgent.search ( "Chrome") < 0)
+    {
+    	var filter = "win16|win32|win64|mac|macintel"; 
+    	if ( navigator.platform ) { 
+			if ( filter.indexOf( navigator.platform.toLowerCase() ) < 0 ) { 
+		    
+			}else{
+				$('#h1').timepicker().on('change', function(){
+			        $('#ui-timepicker-div').hide();
+			    });
+			}
+		}
+    }
+    
 
 	for(var i = 1; i <= 6; i++){
 		animation1 = new Image();
@@ -62,7 +103,6 @@ user_key = query_to_hash();
 		animation3.src = 'res/images/intro-'+j+'.png';
 		animation4 = new Image();
 		animation4.src = 'res/images/mix-'+j+'.png';
-
 	}
 	
 	var bgs = new Image();
@@ -149,8 +189,8 @@ function User_api(){
 	$(".skip").attr("onClick","shake()").show();
 	$(".add_i").show();	
 
-	if( $("input[name=ck]:checked").val() && $("input[name=day]:checked").val() && 
-		jQuery.trim($("#d1").val()) && $("#c1:checked").val() || $("#h1").val()){
+	if( jQuery.trim($("input[name=ck]:checked").val()) && jQuery.trim($("input[name=day]:checked").val()) && 
+		jQuery.trim($("#d1").val()) && (jQuery.trim($("#c1:checked").val()) || jQuery.trim($("#h1").val()))){
 	   var date_val = $("#d1").val();
 	   date_val = date_val.split("-");
 	   name = $("#name").val();
@@ -200,11 +240,25 @@ function User_api(){
 		   		},
 		   		success:function(data){
 		   			result = data;
+
+		   			var text_re =  result.resut.S142.replace(/<BR><BR>/gi, "a!");
+						text_re =  text_re .replace(/<BR>/gi, "");
+						text_re =  text_re.replace(/a!/gi, "<BR>");
+					
+
+					var text_re1 =  result.resut.S143.replace(/<BR><BR>/gi, "a!");
+						text_re1 =  text_re1.replace(/<BR>/gi, "");
+						text_re1 =  text_re1.replace(/a!/gi, "<BR>");
+
+
 		   							
-					$(".text1").html(result.resut.S142);
-					$(".text2").html(result.resut.S143);
+					$(".text1").html(text_re);
+					$(".text2").html(text_re1);
 					for(var i = 1; i <= 12; i++){
-						$(".text3").append("<div>"+i+"월:<br>"+result.resut.S110[i]+"</div>");
+							var text_re2 =  result.resut.S110[i].replace(/<BR><BR>/gi, "a!");
+							text_re2 =  text_re2.replace(/<BR>/gi, "");
+							text_re2 =  text_re2.replace(/a!/gi, "<BR>");
+						$(".text3").append("<div>"+i+"월:<br>"+text_re2+"</div>");
 					}
 					$(".popup").fadeOut()
 					img_num = 0;
@@ -335,9 +389,9 @@ function landing(){
 
 	
 // 빌드된 게임의 디버그 방지를 위한 코드
-(function() {
+/*(function() {
 	eval("setInterval(function() {eval('debugger');}, 500)");
-})();
+})();*/
 
 
 

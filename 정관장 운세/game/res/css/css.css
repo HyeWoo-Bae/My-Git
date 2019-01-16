@@ -64,7 +64,7 @@
 body,html{
 	height:100%;
 	width:100%;
-	animation-duration: .5s
+	animation-duration: .5s;
 }
 
 body > section{
@@ -381,8 +381,9 @@ input[type="checkbox"]:checked + label span{
 }
 
 .text_user > div{
-	width:100%;
-	margin:3% 0%;
+	width:90%;
+	margin:3% 5%;
+	font-size:0.9em;
 }
 
 .text_user > p {
@@ -417,6 +418,134 @@ input[type="checkbox"]:checked + label span{
     display: block;
 }
 
+#ui-datepicker-div{
+	left: 50% !important;
+    top: 0% !important;
+    height: 100% ;
+    background: rgba(0,0,0,0.3) !important;
+    width: 720px ;
+    margin: 0;
+    z-index: 100 !important;
+    transform: translateX(-50%);
+    display: none;
+    position: fixed !important;
+}
+
+.ui-datepicker-header, .ui-widget-header, .ui-helper-clearfix{
+	text-align: center;
+    margin-top: 50%;
+    width: 50%;
+    background: #342A2A;
+    padding: 3% 2%;
+}
+
+.ui-datepicker-next ,.ui-datepicker-prev{
+	background:#342A2A
+	padding: 0% 3%;
+	font-size: 18px;
+}
+
+.ui-datepicker-next ,.ui-datepicker-prev > span{
+	color:#fff;
+	font-size: 18px;
+}
+
+.ui-datepicker-prev{
+	float: left;
+}
+
+.ui-datepicker-next{
+	float: right;
+}
+
+
+.ui-datepicker-title{
+	width: 80%;
+	font-size: 18px;
+    color: #fff;
+}
+
+.ui-datepicker-calendar{
+	width: 50%;
+    background: #fff;
+    padding:2%;
+}
+
+.ui-datepicker-calendar td{
+	text-align: center;
+    padding: 2%;
+}
+
+.ui-datepicker-calendar td:hover{
+	background:#FEB733
+}
+.ui-datepicker-calendar td:hover a{
+	color:#342A2A
+}
+
+.ui-datepicker-year ,.ui-datepicker-month{
+	min-width:40%;
+	background: #342A2A;
+    color: #fff;
+    border: none;
+    float: left;
+    font-size: 18px;
+    padding-left: 3%;
+}
+
+.ui-datepicker-month{
+	float:right;
+}
+
+
+#ui-timepicker-div{	    
+	text-align: center;
+    width: auto;
+    background: #FEB733;
+    width: 720px;
+    left: 50% !important;
+    top: 0% !important;
+    height: 100%;
+    margin: 0%;
+    background: rgba(0,0,0,0.5);
+    padding: 0;
+    transform: translateX(-50%);
+}
+
+.ui-timepicker-table{
+	background: #fff;
+    margin-top: 40%;
+    transform: translateY(-40%);
+	width: 50%;
+}
+
+.ui-timepicker-hours{
+	padding: 0% 1.5% 0% 0%;
+}
+
+.ui-timepicker-minutes{
+	padding: 0% 0% 0% 1.5%;
+}
+
+
+.ui-timepicker-title{
+	margin-top:0%;
+	width: 100%;
+	color:#fff;
+	padding:10px;
+}
+
+.ui-timepicker{
+	width:100%;
+}
+
+.ui-timepicker .ui-timepicker-hour-cell:hover ,.ui-timepicker-minute-cell:hover{
+	background:#FEB733
+}
+
+.ui-timepicker-hours .ui-timepicker tr:nth-child(2){
+	border-bottom:1px solid #342A2A;
+}
 
 @-webkit-keyframes spin {
   0% { -webkit-transform: rotate(0deg); }
@@ -460,6 +589,8 @@ input[type="checkbox"]:checked + label span{
 	body > .popup, .user_info_wrap, .loding_wrap{width:100% !important;}
 	.user_wrap > div:first-child{width: 85%;left: 7.5%;}
 	.text_user{height:86%;}
+	#ui-datepicker-div{width:100% !important;}
+	#ui-timepicker-div{width:100% !important;}
 }
 
 @media(max-width:680px){
@@ -490,6 +621,10 @@ input[type="checkbox"]:checked + label span{
 	input[type="checkbox"] + label span{width:15px;height:15px;}
 	.loding_wrap > img{width:50%;margin-left:25%;}
 	.loader{width:100px;height:100px;}
+
+	.ui-datepicker-calendar,.ui-datepicker-header, .ui-widget-header, .ui-helper-clearfix{
+		width:80%;
+	}
 }
 
 @media(max-width:320px){

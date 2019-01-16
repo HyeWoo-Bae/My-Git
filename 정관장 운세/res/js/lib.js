@@ -30,6 +30,10 @@ var isMobile = {
 };
 
 
+$(".close_btn").click(function(){
+    $(".popup").hide();
+})
+
 
 function query_to_hash() {
     var j, q;
@@ -46,12 +50,8 @@ user_key = query_to_hash();
 
 if(user_key.user_key == undefined || !user_key.user_key ){
     alert("로그인 후 운세를 \n 보실 수 있습니다.");
-    //to do - 전달받은 url
     location.replace('https://www.kgcshop.co.kr/member/login?reurl=https%3A%2F%2Fwww.kgcshop.co.kr%2Findex');
 }
-
-
-
 
 
 function setTing(sever_url, option, heart_option, sns){
@@ -81,17 +81,14 @@ function setTing(sever_url, option, heart_option, sns){
 
         sns_op = sns;
 
-//        code_al(user_info.code)
-
-        
-   /* });*/
 }
+
+
 
 
 
 function tag(btn_wrap){
    $(btn_wrap.start[0]).click(function(){
-        /*console.log(game_start_url)*/
         location.replace(game_start_url);
    });
 
@@ -139,9 +136,9 @@ function heart(option){
     $(option.wrap).find("img").css({"width": (100/option.max)-option.gap+"%","margin":"0%"+option.gap/2+"%"})
 }
 
-(function() {
+/*(function() {
     eval("setInterval(function() {eval('debugger');}, 500)");
-})();
+})();*/
 
 
 

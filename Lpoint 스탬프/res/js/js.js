@@ -1,7 +1,7 @@
 var first_url = '/hvm/event/LPoint/ZZ38/1549CF88-F82B-4EC6-8F1F-60296185A0B1/';
 var array1;
 var new_count = 0;
-var sp_snd = new Howl({src: ['res/snd/sp.mp3'],});
+/*var sp_snd = new Howl({src: ['res/snd/sp.mp3'],});*/
 
 var img = ['1', '2', '2', '2', '2', '3'];
 var txt = ['0', '1', '2', '3', '4', '5'];
@@ -45,31 +45,23 @@ var e_code = 0;
 
 
 
-$.getJSON(first_url+'getInfo.php?user_id='+user_id+'&p1='+p1, function(result){
-	array1 = result.stamp;
+/*$.getJSON(first_url+'getInfo.php?user_id='+user_id+'&p1='+p1, function(result){*/
+array1 = ['n','n','n','n','n'];
+code = 0;
 
-	code = result.code;
-
-	if (code == 99) {
-		alert("이벤트 기간 종료");
-	}
-	else if (code == 98 && code == 97) {
-		alert("잘못된 요청");
-	}
-	else if (code == 0 ) {
-		/*eff('nm');
-		window.addEventListener("scroll", function(){
-			if( $(this).scrollTop() >= ($(".height_box").offset().top * 0.3)  && cl == false ){
-				eff()
-				cl = true;
-			}
-		});*/
-		eff()
-	}
-	else if (code == "" ) {
-		alert("새로고침")
-	}
-});
+if (code == 99) {
+	alert("이벤트 기간 종료");
+}
+else if (code == 98 && code == 97) {
+	alert("잘못된 요청");
+}
+else if (code == 0 ) {
+	eff()
+}
+else if (code == "" ) {
+	alert("새로고침")
+}
+/*});*/
 
 
 function eff (){
@@ -89,7 +81,6 @@ function eff (){
 
 	if(array1.length <= 0 || !array1 || e_code >= 5){
 		new_count = 0;
-		console.log(new_count)
 		ch_ch()
 	}
 	
@@ -113,7 +104,7 @@ function view (eff, idx){
 		setTimeout(function(){
 			tag  = "<img src='res/images/clear.png' class='on' style='top:"+y[idx]+";"+x[idx]+"'>";
 			$(".step_wrap").append(tag);
-			sp_snd.play();
+			/*sp_snd.play();*/
 		},  (new_count) * delay);
 
 	}

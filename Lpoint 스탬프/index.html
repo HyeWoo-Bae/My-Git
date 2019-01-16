@@ -9,32 +9,11 @@
 
 	<link rel="stylesheet" href="res/css/css.css"/>
 
-	<script src="/lib/jquery/jquery-3.3.1.min.js"></script>
-	<script src="/lib/howler/howler.min.js"></script>
-
-
-<?php
-    $domain = $_SERVER['HTTP_HOST'];
-    if ($domain == 'www.doit5.com' || $domain == 'doit5.com' && $domain == 'doit5.lpoint.com') {
-?>
-<script type="text/javascript" src="https://store.lpoint.com/WebContent/js/eiwaf/eiwaf-1.0.0.js" charset="utf-8"></script>
-<script type="text/javascript" src="https://store.lpoint.com/WebContent/js/mobile.comn.js" charset="utf-8"></script>
-<script type="text/javascript">
-    document.write("<script type=\"text/javascript\" src=\"https://store.lpoint.com/WebContent/js/eiwaf/eiwaf.core.js\" charset=\"utf-8\"></scr"+"ipt>");
-</script>
-<?php
-    }
-    else {
-?>
-<script type="text/javascript" src="http://lc.dev.lpoint.com:8603/WebContent/js/eiwaf/eiwaf-1.0.0.js" charset="utf-8"></script>
-<script type="text/javascript" src="http://lc.dev.lpoint.com:8603/WebContent/js/mobile.comn.js" charset="utf-8"></script>
-<script type="text/javascript">
-    document.write("<script type=\"text/javascript\" src=\"http://lc.dev.lpoint.com:8603/WebContent/js/eiwaf/eiwaf.core.js\" charset=\"utf-8\"></scr"+"ipt>");
-</script>
-<?php
-    }
-?>
-
+	<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+	<!-- <script src="/lib/howler/howler.min.js"></script> -->
 </head>
 <body>
 <div class="w100 wrap">

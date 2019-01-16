@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta charset="UTF-8">
+	<!--css-->
+	<link rel="stylesheet" href="res/css/css.css?ver=1"> 
+
+	<!--js-->
+	<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+	<script type="text/javascript" src="https://cdn.rawgit.com/alexgibson/shake.js/master/shake.js"></script>
+	<script type="text/javascript" src="https://cdn.rawgit.com/alexgibson/shake.js/master/shake.js"></script>
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+	<!--<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script> kakao-->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-96158169-20"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script src='//cdn.rawgit.com/fgelinas/timepicker/master/jquery.ui.timepicker.js'></script>
+
+
+	<?php
+    $domain = $_SERVER['HTTP_HOST'];
+    if ($domain == 'www.doit5.com' || $domain == 'doit5.com' && $domain == 'doit5.lpoint.com') {
+?>
+<script type="text/javascript" src="https://store.lpoint.com/WebContent/js/eiwaf/eiwaf-1.0.0.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://store.lpoint.com/WebContent/js/mobile.comn.js" charset="utf-8"></script>
+<script type="text/javascript">
+    document.write("<script type=\"text/javascript\" src=\"https://store.lpoint.com/WebContent/js/eiwaf/eiwaf.core.js\" charset=\"utf-8\"></scr"+"ipt>");
+</script>
+<?php
+    }
+    else {
+?>
+<script type="text/javascript" src="http://lc.dev.lpoint.com:8603/WebContent/js/eiwaf/eiwaf-1.0.0.js" charset="utf-8"></script>
+<script type="text/javascript" src="http://lc.dev.lpoint.com:8603/WebContent/js/mobile.comn.js" charset="utf-8"></script>
+<script type="text/javascript">
+    document.write("<script type=\"text/javascript\" src=\"http://lc.dev.lpoint.com:8603/WebContent/js/eiwaf/eiwaf.core.js\" charset=\"utf-8\"></scr"+"ipt>");
+</script>
+<?php
+    }
+?>
+</head>
+<body>
+	<div class="shake_box">
+		<img src="res/images/mix-3-bg.png" class="sh_bg">
+		<img src="res/images/mix-ani1.png" class="show_img">
+		<img src="res/images/mix-3-guide.png" class="guid">
+	</div>
+	<div class="loding_wrap"></div>
+	<div class="user_info_wrap" id="end_popup">
+		<div class="ending_wrap">
+			<img src="res/images/mozo-panel.png" class="ending">
+			<div class="exit" onClick="landing()"></div>
+		</div>
+		<div class="user_wrap">
+			<div class="total_header">
+				<img src="res/images/result-panel-header.png">
+			</div>
+			<div class="text_info">
+				<div class="text_user">
+					<p>월별 운세</p>
+					<div class="text3"></div>
+					<p>전반기 운세</p>
+					<div class="text1"></div>
+					<p>후반기 운세</p>
+					<div class="text2"></div>
+				</div>
+			</div>
+			<div class="total_header">
+				<img src="res/images/result-panel-footer.png">
+				<div class="go_end" onclick="end()">
+					<img src="res/images/btn-get-mozo.png">
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="popup">
+		<div class="popup_header">
+			<img src="res/images/input-panel-top.png">
+		</div>
+		<div id="pops">
+			<div class="text_view">
+				<table class="tables">
+					<tr>
+						<td class="title">성별</td>
+						<td class="input">
+							<input type="radio" id='m' value="남" name="ck" class="ins">
+							<label for='m'><span></span>남</label>
+							<input type="radio" id='w' value="여" name="ck" class="ins">
+							<label for='w'><span></span>여</label>
+						</td>
+					</tr>	
+					<tr>
+						<td  class="title">생년월일</td>
+						<td>
+							<input type="radio" id='r1' value="양력" name="day" class="ins">
+							<label for='r1'><span></span>양력</label>
+
+							<input type="radio" id='r2' value="음력(평달)" name="day" class="ins">
+							<label for='r2'><span></span>음력(평달)</label>
+
+							<input type="radio" id='r3' value="음력(윤달)" name="day" class="ins">
+							<label for='r3'><span></span>음력(윤달)</label>
+						</td>
+					</tr>	
+					<tr>
+						<td></td>
+						<td class="input date_t" id="tds">
+							<input id='d1'  class="ins ">
+						</td>
+					</tr>
+					<tr>
+						<td class="title">태어난시</td>
+						<td>
+							<input type="checkbox" id='c1' value="모름" onclick="check()" class="ins">
+							<label for='c1'><span></span>모름</label>
+						</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td class="input">
+							<input  id='h1' type='time' class="timer ins" >
+						</td>
+					</tr>
+				</table>
+				<div class="result_btn_wrap">
+					<img src="res/images/btn-confirm-nor.png" onclick="User_api()">
+				</div>
+			</div>
+		</div>
+		<div class="popup_header">
+			<img src="res/images/input-panel-bt.png">
+		</div>
+	</div>
+	<section id="section1">
+		<div class="bg">
+			<img src='res/images/bg1.png' class="i1">
+			<img src='res/images/bg2.png' class="i2">
+			<img src="res/images/bg3.png" class="i3">
+			<img src="res/images/bg4.png" class="i2">
+			<img src="res/images/bg5.png" class="i5">
+			<img src="res/images/title.png" class="img_title">
+			<div class="loding_end">
+				<img src='res/images/guide.png?ver=1'>
+				<div class="start_game" onclick="start_game()"></div>
+			</div>
+			<div class="clode">
+				<img src="res/images/dosa-eff-1.png">
+			</div>
+			<div class="wrap" style="display: none">
+				<img src="res/images/intro-1.png" class="ch">
+			</div>
+			<div class="skip" onclick="User_info('true')">
+				<img src="res/images/skip-btn.png">
+			</div>
+		</div>
+	</section>
+	<script>
+		if(typeof mbf_TransparentTitle !== "undefined"){
+    	   mbf_TransparentTitle("", "white");     //투명 헤더 세팅
+		}
+
+
+		$("#h1").click(function(){
+			$("#h1").removeClass("timer")
+			$("#h1").addClass("remove");
+		})
+		$("#d1").click(function(){
+			$("#tds").removeClass("date_t");
+			$("#tds").addClass("revmoe");
+		});
+	</script>
+	<script src="res/js/size.js?ver=1"></script>
+	<script src="res/js/js.js?ver=1"></script>
+</body>
+</html>

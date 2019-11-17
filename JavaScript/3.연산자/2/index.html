@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+// == equal operator  좌항과 우항을 비교한다 같으면 true 다르면 false
+	// 동등 연산자
+	console.log(1==2) //return false
+	console.log(1==1) //return true; 
+
+	console.log("one" == "one") //return true;
+	console.log("one" == "two") // return false;
+
+// === strict equal operator
+	// === 일치 연산자 
+	console.log(1==="1") //false (숫자와 === 문자) 타입이 다름 
+	console.log(1=='1') // true 타입이 다르나 실질적인 정보에 의미가 같다.  
+	
+    // null undefined 비교
+    // null은 값이 없다 undefined는 값이 정의되지 않았다. 
+    var a;
+    console.log(a) // undefined 어떠한 값도 정의 되어 있는게 아니다
+
+   	var a = null // 값이 없는것(의도적으로 프로그래머가 값이 없다 라는걸 부여)
+
+   	console.log(undefined == null) // true 실질적으로 정보에 의마가 같음(없다)
+
+   	console.log(undefined === null) // 타입이 다르다 false
+
+
+// Boolean true false 2가지 데이터가 존재한다 
+	//  true == 1 or true =='1' (동등 연산자에서 1은  true)
+	//  나머지 수는 flase
+	//  0 === -0 true 둘다 0임  
+	//  NaN = not a Number (계산 불가능) ex) 0/0
+	//  NaN===NaN false 특징적이다  
+// String  "a", "b", "c" 여러가지 데이터가 존재한다
+// Nuber -1, 0, 1 여러가지 데이터가 존재한다 
+// undefined 타입 undefinded  각각 데이터 타입이 존재한다
+// null 타입 null  가가가 데이터 타입이 존재한다 
+
+// != 부정   !== 정확하게 같냐
+	console.log(1!=2) //동등 비교로 결과는 flase 하지만 !로 부정 true
+	console.log(1!=1) // flase
+
+//  >, >= 비교
+	// > 크다 반대 <
+	console.log(10>30) //flase 
+	console.log(10>1)  //true
+	console.log(10>10) //flase 
+
+	// >= 크거나 같다
+	console.log(10>=20) //false
+	console.log(10>=1)  //true
+	console.log(10>=10) //true
+
+
+
+//
+</script>
+</body>
+</html>

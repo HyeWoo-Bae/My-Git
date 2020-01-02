@@ -1,2 +1,0 @@
-# My-Git
-BaeHyeWoo git

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+
+/*변수의 유효범위*/
+/*
+전역변수 -> 자바스크립트 코드 전체에 걸쳐서
+지역변수 -> 오직 해당 함수 몸체 안에서만 정의 된다.
+ */
+
+var scope = "global";
+function checkscope(){
+	var scope = "local";
+	//console.log(scope);  // local 같은 이름을 갖는 경우, 함수 내부에서 지역변수는 저역변수보다 우선순위가 높다 이는 매개변수도 해당된다 
+}
+
+checkscope();
+
+/*전역 변수는 var 생략이 가능하지만 지역 변수는 var 생략이 불가능하다 */
+a = "global";
+
+function test(){
+	a = "local";
+	b = "local";
+	return [a, b]
+}
+
+test(); //[local, local]
+//console.log(a); /*a가 오염되어 local이 되었고*/
+//console.log(b); /*b는 전역 변수 역할이 아니다*/
+
+
+/*함수는 중첩이 가능하기 때문에 함수 마다 유효범위가 있다*/
+var c = "global";
+function test2(){
+	var c = "local";
+	function test3(){
+		var c = "keep";
+		//console.log(c) // -> keep 자바스크립트에 지역변수 유효범위 기준은  함수
+	}
+	return test3();
+}
+test2();
+
+
+
+/*함수 유효범위와 끌어올림 */
+
+var o = {};
+function test4(o){
+    var i = 0;
+    if(typeof o =="object"){
+       var j = 0;
+       for(var k = 0; k < 10; k++){
+           console.log(k);
+       }
+       console.log(k); // -> 10 9에서 증감타고 조건문에서 false로 빠져나옴
+    }
+    console.log(j); 
+}
+test4(o);
+
+
+
+
+</script>
+</body>
+</html>

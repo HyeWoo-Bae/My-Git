@@ -49,6 +49,9 @@ test2();
 
 
 /*함수 유효범위와 끌어올림 */
+/*자바스크립트의 함수 유효범위는, 어떤 함수 안에서 선언된 모든 변수는 그 함수 전체에 걸쳐 유효하다는 의미다.
+  변수가 선언되기 전에도 유효하다는 뜻이다.
+*/
 
 var o = {};
 function test4(o){
@@ -63,6 +66,29 @@ function test4(o){
     console.log(j); 
 }
 test4(o);
+
+
+var d = "global";
+function test5(){
+	console.log(d+"::::d"); //undefined 출력 
+	var d = "local";
+	console.log(d+"::::d"); //local 출력
+}
+
+test5();
+/*
+함수 유효범위 규칙 때문에 global아니라 함수 내에 있는 지역 변수가 우선순위가 되어 전역 변수를 덮어 버리고 
+아직 초기화가 안된 상태이기 때문에 undefined가 된다
+ㅈ역변수가 함수 전체에 걸쳐서 선언되기 때문에 지역변수가 선언되고 값은 나중에 대입이 된다.
+ */
+
+
+
+
+
+
+
+
 
 
 

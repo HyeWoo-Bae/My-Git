@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script>
+    // 시작 과 끝이 동일한 따옴표 감싸야한다
+	alert("hello"); //큰따옴표
+    alert('hello'); //작은따옴표
+    // alert('hello"); 이런식에 표현은 불가능 하다.
+    alert("hello'"); //이런식에 표현은 가능하다
+
+    alert("hello \n hi") // \n줄바꿈 문자 이다 
+    alert('can\''); // \' 통해  '를 예외로 처리가 가능하다.
+
+    alert('my name is'+'hw'); // 문자열을 이어붙이는 것이 가능하다 
+
+    alert('welocme to my blog'+"hi"); //이런식으로 가능하다 
+
+    console.log("hi".length); 
+
+    var h = "hello";
+    console.log(h.charAt(0)); //인덱싱 번호 0번에 해당하는 글자 값 반환
+    console.log(h.charAt(h.length-1)); // 인덱싱 마지막 번호에 해당하는 글자 값 반환 
+    console.log(h.substring(1, 4)); // substring(start, end) 라고 가정 할때 인덱싱 번호 1번째에서 end index 번호를 제외한 나머지 부분 리턴
+    console.log(h.slice(1, 4));
+    console.log(h.indexOf("l")); // 인덱싱 번호 0번부터 "l" 문자 위치한 첫 번째 위치를 반환한다.
+    console.log(h.lastIndexOf("l")); //인덱싱 번호 마지막 부터 시작하여  "l"문자가 위치한 위치를 반환한다
+    console.log(h.split("e")); //"e"를 기준으로 문자열의 나눈다.
+    console.log(h.replace("h", "!")); //특정 문자를(h) 원하는(!) 문자로 변경한다 h->!
+    console.log(h.toUpperCase()) //대문자로 변경 전체
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

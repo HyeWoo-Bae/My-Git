@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script>
+	function test(o){
+		var i = 0;
+		if (typeof o == "object"){
+			var j = 0;
+			for(var k = 0; k < 10; k++){
+				//for 순서
+				//초기화 -> 조건 -> 실행 -> 증감
+				console.log(k);
+			}
+			console.log(k);
+		}
+	}
+	test([]);
+
+	test2("hi~~");
+
+	function test2(a){
+		console.log(a)
+	}
+</script>
+</body>
+</html>

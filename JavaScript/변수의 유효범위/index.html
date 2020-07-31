@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script>
+		var scope = "global 전역";
+		function check1(){
+			var scope = "local 지역";
+			return scope;
+		}
+		alert(scope+":::"+check1()); // check1()이라는 함수를 호출 결과는 local 지역이다 
+
+		function check2(){
+			scope = "local 지역"; //기존에 있던 scope 수정한다 오염됨
+			return scope;
+		}
+
+		alert(check2()+":::"+scope); // 둘다 local 지역 이다.
+
+		/////
+		function ck1(){
+			scope = "local1";
+				function ck2(){
+					scope = "local2";
+					return scope;
+				}
+			return ck2();
+		}
+
+		alert(ck1());
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script>
+		if(true){
+			alert("start:::::state true"); // 다양한 구문 
+			alert("true"); // 다양한 구문 
+		}
+
+		if(false){
+			alert("start:::::state false");
+			alert("false");
+		}
+	
+		if(true) alert("one line"); //단일 구문만 가능하다 문장 블록이 없으면 
+
+
+		if(true){
+			alert("true:::1");
+		}else{
+			alert("false:::1");
+		}
+
+		var a = true;
+
+		if(a){
+			alert("a::::true");
+		}else{
+			alert("a::::false");	
+		}
+
+		a = false;
+
+		if(a){
+			alert("a::::true");
+		}else{
+			alert("a::::false");	
+		}
+
+		var b = 1+1;
+
+		if(b === 2){
+			alert("b::::true");
+		}else{
+			alert("b::::false");
+		}
+
+		var c = 3;
+
+		if(c === 1){
+			alert("c:::1");
+		}else if( c === 2){
+			alert("c:::2");
+		}else if( c === 3){
+			alert("c:::3");
+		}
+
+		switch("a"){
+			case "a":
+				alert("a::::switch");
+			break;
+
+			case "b":
+				alert("b::::switch");
+			break;
+		}
+
+		switch("a"){
+			case "a":
+				alert("a::::not break");
+
+			case "b":
+				alert("b::::break");
+			break;
+		}
+
+		switch("a"){
+			case "b":
+				alert("b::::switch");
+			break;
+			case "c":
+				alert("c::::switch");
+			break;
+
+			default:
+				alert("default::::switch"); //모든 경우에 해당하지 않으면 실행
+			break;
+		}
+
+	</script>
+</body>
+</html>

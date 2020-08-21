@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script>
+		var b = "global";
+		var c = "global";
+		function a(x){
+			c = "local"; 
+			alert(b+":::"+c); 
+		} 
+
+		alert(b+":::"+c);
+		a();
+	</script>
+</body>
+</html>

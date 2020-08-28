@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script>
+		function a(){
+			this.a1 = 1;
+			this.a2 = 2;
+		}
+
+		var b = new a();
+		console.log(b.a1+":::"+b.a2);
+
+
+		function ceo(){}
+		ceo.prototype.name1 = "ceo";
+
+
+		function master(){}
+		master.prototype.name = "no name";
+		master.prototype = new ceo();
+
+		var sub = new master();
+		console.log(sub.name1);
+	</script>
+</body>
+</html>

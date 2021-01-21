@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script>
+	
+		function a (){
+			var b = 1;
+		}
+
+
+		function outer(){
+			var a = 1;
+			var b = 3;
+			function inner(){
+				var a = 2;
+				console.log(a+b);
+			}
+			return inner();
+		}
+
+
+		
+		function counter(){
+		   var count = 0;
+		   return{
+		        add_fn : function(){ return count++},
+		        shift_fn : function() {return count--}
+		   }
+		}
+
+		var b = counter();
+		b.add_fn();
+		b.shift_fn();
+
+	
+		 
+		
+
+	</script>
+</body>
+</html>

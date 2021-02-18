@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	변수(variable)이라고 한다.
+	변수에 담겨진 값은 다른 값으로 변경이 가능하다 
+	/*
+		변수 선언은 var 변수 이름 ex)
+	 */
+	var a = 1; // a라는 이름을 가진 변수를 생성한다.
+ 	console.log(a); 
+ 	/*
+ 	개발자 화면에 1이라는 결과가 생긴다 위 코드
+ 	위 코드를 통해 a 는(=) 1이라고 대입하였이 때문 
+ 	*/
+    a = 10;
+    // 이런식으로 기존에 만들었던 변수a 에 접근하여 a를 재 정의가 가능하다 
+    
+    var b = 2;
+    console.log(a+b); //12이고 사칙연산이 가능하다 
+
+    var first = 'coding'; // 문자 가능
+    var c = 'coding', b = 'every body'; // 다중 선언이 가능하다
+
+    ----------------------------------------
+
+    연산자 
+    어떠한 작업을 검퓨터에게 지시하기 위한 기호이다.
+    ex) var a = 1  a라는 변수에 1을 대입한다는 뜻이다.
+    여기서 = 대입한다는 뜻을 가지고 있다.
+
+    비교 연산자 
+    좌항과 우항이 존재할때를 값으 비교 할때 사용한다.
+    (> >= < <=)
+
+    동등연산자 일치연산자
+    == 동등연산자(equaloperator)
+    좌항가 우항을 비교한다.
+    서로 값이 같다면 true 다르면 false를 리턴한다
+    숫자 문자 모두 비교가 가능하다 
+
+    === 일치연산자(strict equal operator)
+    좌항과 우항이 완전하게 일치한지를 비교한다
+
+    console.log(1 === "1") // false
+    좌항과 우항에 데이터 타입 / 형식 모두가 일치해야 한다
+
+    console.log(1 == "1") // true
+    좌항과 우항에 타입이 다르더라도 의미하는 바가 같으면 같다 
+
+    ----------------------------------------2020.12.17
+
+    null&undefined
+
+    null 값이 없다 의도 적으로 부여가 가능하다
+    ex)
+    var a = null;
+    console.log(a);
+
+    undefined 값이 정의되어있지 않음
+    ex)
+    var a;
+    console.log(a);
+
+    ---------------------------------------- 
+
+    type
+
+    boolean(true, false를 포함한다, 단 두가지의 데이터를 가진다)
+
+    nummber(실수, 모든숫자)
+
+    string("a","b" 모든문자)
+
+    undefined undefined 각각 타입이다 
+
+    null null 각각 타입이다
+
+    ----------------------------------------
+
+    NaN Not a Number
+
+    0/0으로 나누거나 undefined/0
+    연산이 불가능한 경우 
+
+    NaN === NaN false NaN과 NaN은 비교가 불가능함 
+
+	---------------------------------------- 
+	
+	!= Not   
+
+	!는 부정을 의미한다 결과 값의 부정하여 
+	true -> false
+	false -> true
+	로 역전한다 
+	ex) 1 != 2 // true
+
+	!== 정확하게 
+	===에 결과 값에 역전된다
+
+	----------------------------------------
+
+	>, < 부등호 좌항과 우황의 비교해 결과를 보여준다 
+
+	>= 좌항이 우항보다 크거나 같다 
+
+    <= 우항이 조항보다 크거나 같다
+
+    ----------------------------------------2020.12.18
+
+	조건문 
+	주어진 조건에 따라 에플리케이션을 다르게 동작하도로 하는 것 이다	
+
+	문법
+	조건 문은 if라는 키위드로 시작한다
+	ex)
+	if(true or false){
+		//조건문의 내용
+	}
+
+	if(true){
+		console.log('true');
+		//if 뒤 괄호에 true가 오면 {중괄호 안에오는것을 실행한다} 
+	}
+
+	if(false){
+		console.log('true');
+		//if 뒤 괄호에 true가 오면 {중괄호 안에오는것을 무시한다} 
+	}
+
+	else 
+
+	if (true->조건식){
+		alert('true');
+		조건식에 값이 true면  else 뒤에 {} 실행이 안된다 
+	} else {
+
+	}
+
+
+	if (false){
+		alert('true');
+	} else {
+		alert('false');
+		조건식에 값이 false일때 else를 실행한다 
+	}
+
+	if (false){
+		alert('1');
+	} else if (true){
+		alert('2');
+	}
+	// 처음 if 문에 조건식 값이 false라 건너뛰고 다음 블럭에 조건식에 true를 만나 2를 출력한다 
+
+	if(위 조건식안에는 불리언에 결과 값만 올수 있다)
+	ex)
+
+	var a = true;
+	if(a){
+		console.log('true');
+	}
+
+	var b = 1;
+	if(b){
+		console.log('true');
+	}
+	
+	논리 연산자
+
+	&& and 
+	좌항과 우항이 모두 true면 true를 반환한다 
+	if( true && true ){
+		alert('1'); //실행됨 
+	}
+
+	if( true && false ){
+		alert('1'); //실행안됨
+	}
+
+	if( false && true ){
+		alert('1'); //실행안됨
+	}
+
+	if( false && false ){
+		alert('1'); //실행안됨
+	}
+
+	|| or
+	좌항과 우항중 하나만 true면 true이다 
+
+	if(true || true){
+		alert('1'); //실행됨
+	}
+
+	if(false || true){
+		alert('1'); //실행됨
+	}
+
+	if(true || false){
+		alert('1'); //실행됨
+	}
+
+
+	if(false || false){
+		alert('1'); //실행 안됨 
+	}
+
+	----------------------------------------2020.12.20
+
+	반복문
+	while 구조 
+	while (조건) {
+		반복해서 실행할 코드 
+		조건이 true 상태일 동안에 실행할 코드를 실행한다.
+	}
+	ex)
+
+	제어 하는 법
+	ex)
+	var i = 0;
+	while(i < 10){
+		조건식 안에 비교 연산자에 결과는 true or false로 반환된다 
+		true에서 false가 될때 까지 반복코드를 실행한다
+		i가 9가 될때 까지
+		console.log("hi");
+		i = i+1; //  i는 i현재 값+1;
+
+	}
+
+	for 구조
+	for(초기화;반복조건;증감){
+		반복코드
+	}
+
+	ex)
+
+	for(var i = 0; i < 10; i=i+1){
+		초기화 -> 반복조건 -> 반복코드 -> 증감 
+		반복조건 -> 증감 조건이 false가 될때까지 반복된다 
+		i = i+1 -> i++
+	}
+
+	반복문의 제어
+
+	for(var i = 0; i < 10; i++){
+		if( i === 5 ){
+			break;
+			break; 키위드를 만나면 반복문은 종료된다.
+		}
+		console.log("hi"+i);
+	}
+
+
+	for(var i = 0; i < 10; i++){
+		if( i === 5 ){
+			continue;
+			continue; 중지되고 반복문이 try된다 
+		}
+		console.log("hi"+i);
+	}
+
+	----------------------------------------2020.12.21
+
+	함수
+	함수란 하나의 로직을 재실행 할 수 있도록 하는것으로 코드의 재사용성을 높여준다
+
+	function 함수 정의 ex)
+	function 함수명 (인자..){
+		코드
+		return 반환값 
+		//return 바로 뒤에오는 반환값을 반환하고 함수를 종료시킨다 
+
+	}
+
+	function 함수 호출 ex);
+	함수 명();
+
+	인자
+
+	function get_arg(arg){
+		// 1이 들어갈 자리에 arg가 존재한다 즉 arg = 1이다 파라미터(parameter)
+		return arg;
+	}
+
+	console.log(get_art(1));
+	// get_art함수를 호출할때 1을 보낸다 argument라고 한다 
+
+	function get_arg1(arg1, arg2){
+		// arg1 = 10, arg2 = 20
+		return arg1 + arg2;
+	}
+
+	console.log(get_arg1(10, 20));
+
+	함수를 정의하는 다양한 방법
+
+	var a = function(){
+		for(var i = 0; i < 10; i++){
+			console.log(i);
+		}
+	}
+
+	function a (){
+		for(var i = 0; i < 10; i++){
+			console.log(i);
+		}
+	}
+
+	위 아래는 똑같은 코드이다 
+
+	(function(){
+		console.log("start");
+	})();
+	일회성으로 사용한다 익명함수 라고 한다 
+
+	----------------------------------------2020.12.24
+
+	배열 데이터를 담는 그릇이다 
+	배열은 여러가지 데이터를 가질 수 있다 
+
+	배열 생성 ex)
+	var a = ['1', '2', '3'];
+	배열안에 있는 각각의 데이터들은 원소라고 부르고 ,로 구분한다
+
+	배열 접근방법 ex)
+	JavaScript는 넘버링이 있고 0부터 시작한다
+	var a = ['1', '2', '3'];
+	배열 1번째 원소에 접근하고 싶으면 a[0-> index 번호]
+	
+	배열과 반복문
+
+	function name(){
+		return ['a', 'b', 'c', 'd']
+	}
+
+	var member = name();
+	console.log(member.length); //배열에 담겨있는 원소를 카운트해준다
+
+	for(var i = 0; i < member.length ; i++){
+		console.log(member[i]);
+		// for문을 통에 가변적으로 배열에 접근할 수 있다 		
+	}
+
+	배열의 추가 
+
+	var li = ['a', 'b', 'c'];
+
+	li.push('d');
+
+	li이라는 배열에 원소 맨 끝에 하나의 원소를 추가한다 
+
+
+	var li = ['a', 'b', 'c'];
+
+	li = li.concat('d', 'e'); // 여러게 원소가 추가 가능하다 
+
+	var li = ['b', 'c', 'd'];
+
+	li.unshift('a');  // 배열에 원소 맨 앞에 하나의 원소를 추가한다 index가 하나씩 밀림 
+
+	배열의 제거 
+	var li = ['a', 'b', 'c'];
+	li.shift(); //a를 제거한다 배열의 맨앞에 원소를 제거한다
+
+	var li = ['a', 'b', 'c'];	
+	li.pop(); // 배열의 맨뒤에서 원소를 제거한다 
+
+
+	----------------------------------------2020.12.28
+
+	객체 
+	객체는 배열과 다르게 식별자가 문자 숫자가 가능하다 
+	형태 ex)
+	var a = {'egoing':10}
+	여기서 'egoing' 은 키이고 
+	10은 값이다 
+
+	객체 생성 ex)
+	var b = {} 비어있는 객체
+	var b = new Object();
+
+	객체 접근
+	var b = {}; 객체 생성후 
+	b['hi'] = 10; 객체에 값 생성 
+	b['hi'] 결과는 10
+	b.hi; 결과는 10
+
+
+	배열과 for 
+
+	var b = {'hi':'1', 'hello':'2'}
+	for(var i = 0; i < b.length; i++){
+		객체도 배열처럼 증가하면 늘어나고 길이 측정이 가능하다 
+    	console.log(b[i]);
+	}    
+
+	좀더 좋은 방법은 
+
+	for(var i in b){
+    	console.log(i+"키이다 "+b[i]+"값이다 ");
+    	즉 b에있는 키값 i를생성에 for문에 반복되는 동안 담는다 
+	} 
+
+	----------------------------------------2020.12.30
+
+	유효범위 
+
+	var scope_a = 'global'; 
+	// 전역변수 자바스크립트 전역에서 접근이 가능하다 
+
+	function f_scope(){
+		var scope_a = 'lobal'; 
+		//f_sope 안에 정의되어 있어 scope_a는 지역 변수가 된다
+		//지역 변수는 함수 범위 안에서만 접근이 가능하다
+
+    	console.log(scope_a);
+    	//결과적으로 local이 출력된다 
+    	//이유는 자신으로 부터 가장 가까운 sope_a를 출력한다 
+	}
+
+	f_scope();
+
+	function g_scope(){
+		console.log(scope_a);
+	}
+	g_scope(); //전역 변수 global을 출력한다 
+
+	function scope1(){
+		var scope1_1 = "local";
+	}
+
+	scope1();
+	alert(scope1_1);// 오류가 난다 지역변수는 그 지역에서만 접근이 가능하다 
+
+	----------------------------------------2021.01.04
+
+	값으로서의 함수
+
+	함수는 변수에 담는게 가능하다 
+	var a = function(){}
+
+	객체안에 저장도 가능하다
+
+	var a = {
+		b : function(){
+
+		}
+	}	
+
+	객체안에서 값으로서 함수는 메소드라고 부른다 
+
+	function a(mode){
+	    var b = {
+	        'play' : function(vals){ alert('play'+vals)},
+	        'stop' : function(vals){ alert('stop'+vals)}
+	    }
+
+    	return b[mode]
+	}
+
+	a('play')(1);
+
+	1.a('play')라는 함수를 호출하고 반환한다
+	2.반환한 메소드에 함수를 호출(1)
+
+	var s = [20,10,9,8,7,6,5,4,3,2,1]
+
+	var sort_a = function(a,b){
+	    console.log(a,b)
+	    return a-b;
+	}
+
+	반환값이 0보다 작으면 a 가 앞으로 
+	반환값이 0보다 크면 b가 앞으로 
+
+	s.sort(sort_a);
+
+	콜백함수 
+	sort를 통해 호출하여 sort에 결과물 sort_a가 받음
+
+	----------------------------------------2021.01.05
+
+	비동기
+	비동기식 처리 모델은 동기식 처리 모델과는 반대로 데이터의 요청과 결과가 동시에 일어나지 않습니다. 서버에게 데이터를 요청한 후 요청에 따른 응답을 계속 기다리지 않아도되며 다른 외부 활동을 수행하여도되고 서버에게 다른 요청사항을 보내도 상관없습니다.
+
+	동기
+	동기식 처리 모델은 데이터의 요청과 결과가 한 자리에서 동시에 일어납니다. 간단히 말해 사용자가 데이터를 서버에게 요청한다면 그 서버가 데이터 요청에 따른 응답을 사용자에게 다시 리턴해주기 전까지 사용자는 다른 활동을 할 수 없으며 기다려야만합니다.
+
+	출처: https://juyeop.tistory.com/22 [글 쓰는 개발자의 꿈]
+
+	Ajax (asynchronous Javascript and xml);
+
+	----------------------------------------2021.01.06
+
+	클로저 
+	내부함수가 외부함수의 맥락에 접근할 수 있는것	
+
+	function out(){
+		function inner(){
+			var title = 'coding every body';
+			alert(title)
+			// 내부 함수 
+		}
+		inner();
+	}
+	out();
+	// 내부 함수 기준으로 내부함수를 포함하고있는 함수는 외부함수 
+
+
+	function out(){
+        var title = 'coding every body';
+		function inner(){
+			alert(title)
+		}
+		inner();
+	}
+	out();
+
+	위코드처럼 내부함수에서 외부함수에 변수에 접근이 가능하다 
+	이런걸 클로저라고 한다 
+
+	외부함수가 더이상 사용되지 않아도 내부함수가 외부함수에 접근이 가능하다
+
+	function out(){ //외부함수 
+		var title = 'coding every body';
+		return function(){
+			alert(title);
+		}
+	}
+
+	var inner = out();
+	inner();
+
+	// 코드에 이상함을 느낄수 있을꺼다 
+	// return을 만나는 순간 모든걸 종료하고 빠져나온 후 return을 실행한다 근데 title이라는 변수에 접근이 가능하다 
+
+	//내부함수를 포함한 외부함수에 접근이 가능하다
+
+	function factory_movie(title){
+	    return {
+	        get_title : function (){
+	            return title;
+	        },
+	        set_title : function(_title){
+	            title = _title
+	        }
+	    }
+	}
+
+	var ghost = factory_movie('Ghost in the shell');
+	var matrix = factory_movie('Matrix');
+	 
+	alert(ghost.get_title());
+	alert(matrix.get_title());
+	 
+	ghost.set_title('공각기동대');
+	 
+	alert(ghost.get_title());
+	alert(matrix.get_title());
+
+	효용 return 하였기 때문에 factory_movie에 매개변수는 
+	내부함수 값들만 접근이 가능하다  private variable이다 
+	내부함수들만 접근이 가능하기 때문에 맥락에 영향이 가지 않는다 
+
+	+ 2021.01.09
+	함수는 생성하는 즉시 자기만에 scope 범위를 같는다 
+	클로저는 함수 내부에서 외부에 접근할때 생성된다 
+	클로저가 생성이 되면 스코프를 저장한다 
+	new 함수()로 생성한 객체와 다르게 .을 이용해 접근할수 없다 
+
+	----------------------------------------2021.01.11
+
+	arguments
+
+	함수에는 arguments 라는 변수에 담긴 숨겨진 유사배열이 있다
+
+	function a(){ -> 매개변수가 없다. 하지만 실행이된다 
+	    var _sum = 0;
+	    for(var i = 0; i < arguments.length; i++){
+	        console.log(arguments[i]);
+	        _sum += arguments[i];
+	    }
+	    return _sum;
+	}
+	a(1,2,3); ->인자 
+
+	참고로 인자가 여러가지이고 매개변수가 없거나 하나여도 자바스크립트는 관대하여 오류가 발생하지 않는다
+
+	arguments 역할은 사용자가 전달한 인자가 유사배열 형태로 담겨져 있다
+
+	매개변수의 수
+
+	function a(arg1){
+	    console.log(a.length+"::a.length"); -> 1출력
+	    a라는 함수가 정의한 매개변수의 길이
+	    console.log(arguments.length+"::arguments.length"); -> 2출력
+	    함수를 호출할때 몇개의 인자를 전달하였는지에 대한 길이 
+	}
+
+	a('1','2');
+
+
+	----------------------------------------2021.01.12
+	함수 호출 
+
+	function a(){ //가장 기본적인 방법
+
+	}
+
+	a();
+
+
+	var o1 = {v1:1, v2:2, v3:3};
+	function sum(){
+	    var _sum = 0;
+	    for(var name in this){
+	        _sum += this[name];
+	    }
+	    return _sum;
+	}
+
+	console.log(sum.apply(o1)); 
+
+
+	// apply에 첫번째 인자는 apply가 호출하는 함수에 this가 된다 
+	// o1이라하는 객체에 sum라는 메서드가 생기는 결과이다
+
+	효용 
+	객체안에 아주 큰 함수가 생기면 가독성이 떨어진다 
+
+	----------------------------------------2021.01.19
+
+	객체 지향 프로그램 (Object Oriented Programming) -> oop
+
+	프로그램의 구성하는 로직을 상태와 행위로 구분해서 서로 연관되어있는 것들을  그루핑 한걸 객체라고 한다 그 객체와 객체를 조립한것 -> 재활용 
+	좋은 객체를 만드는것은 좋은 부품을 만드는것
+
+	효용
+	만약 내가 댓글에 기능을 만들었다면 그 기능에 소스를 여기저기에서 사용가능 하다 
+	-> 객체지향 프로그램이라는건 객체를 만들어서 관련된 취지들과 맞는 변수와 메소드 등을 넣어둔다 
+
+	문법과 설계
+
+	설계는 관심사를 초점에 두어서 가장 단순하고 깔끔하게 표현해야한다
+	추상화라고 한다 
+
+	부품화 
+	메소드는 부품화의 예라고 할 수있다.
+	메소드를 사용하는 기본 취지는 연관되어있는 로직들을 결합해서 
+	메소드를 완성시키고 이 메소드는 하나의 완제품이 되어서 독립된 프로그램에도 사용한다 
+
+	은닉화 캡슐화 
+	내부의 동작 방법을 단단한 케이스 안으로 숨기고 사용자에게는 그 부품의
+	사용방법만을 노출한다.
+
+	인터페이스 
+	a제품이 고장나서 b제품으로 교환하였을때도 문제가 없어야 한다 
+
+	----------------------------------------2021.01.21
+
+	생성자와 new 
+
+	객체는 다양한 방법으로 선언이 가능하다  ex)
+
+	var a = {}	
+
+	a.name = 'BAEhyewoo'; //프로퍼티(property);
+	a.introduce = function(){
+		return 'my name is ' + this.name;
+	}
+
+	// 객체 안에 속성이 함수 = 메서드 
+	// 위 코드에 문제점은 객체를 정의 하는 부분 과 프로퍼티 메서드 사이에 텀이 존재한다 그래서 이 텀에 다른 코드가 추가될 수 도 있다
+
+	고쳐보면 
+
+	var a = {
+		'name' : 'hyewoo',
+        'intrudoce' : function(){
+            return 'my name is '+ this.name;
+        }
+	}
+
+	var b = {
+		'name' : 'ch',
+        'intrudoce' : function(){
+            return 'my name is '+ this.name;
+        }
+	}
+
+	위 코드를 보면 이름에 프로퍼티 값만 다르고 메서드에 구조는 완전하게 같아 중복이 발생하고 있다
+	만약 위 코드에 메서드에 내용을 변경하여야 할때 전체를 변경해야한다 
+	코드에 가독성이 떨어지고 유지보수가 힘들어진다.
+
+	생성자(construtor)
+
+	function Star(){};
+	var a = new Star();
+	a.name = 'egoing';
+	a.intrudoce = function(){
+		return 'My name is ' + thils.name;
+	}
+
+	// new 가 앞에 붙으면 생성자가 된다 객체를 생성하기 때문이다 
+
+	function Star(name){
+		this.name = name
+		this.introduce = function(){
+			return 'My name is ' + this.name;
+		}
+	}
+
+	var p1 = new Star('hi');
+	var p2 = new Star('hello');
+
+
+	생성자를 통해 객체를 초기화를 한다 init을 한다 
+
+
+
+
+	<script>
+	</script>
+</body>
+</html>

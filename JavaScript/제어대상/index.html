@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<style>li {padding:10px; list-style: none}</style>
+<body>
+<li id ="active_id">1</li>
+<li class="active">2</li>
+<li class="active">3</li>   
+
+ 
+<script>
+
+    var lis = document.getElementsByTagName('li'); 
+    // 태그명이 li이인 태그를 모두 가져온다 
+    for(var i = 0; i < lis.length; i++){ 
+    // li태크가 있는 만큼 for문 작동
+        lis[i].style.color = 'red';  
+        //li태그를 0부터 하나씩 선택해 style 적용
+    }
+
+    var lis_cl = document.getElementsByClassName('active'); 
+    // class명이 li이인 태그를 모두 가져온다 
+    for(var i = 0; i < lis_cl.length; i++){ 
+        // li태크가 있는 만큼 for문 작동
+        lis_cl[i].style.color = 'red';  //li태그를 0부터 하나씩 선택해 style 적용
+    }
+
+    var lis_id = document.getElementById('active_id');
+    lis_id.style.color = 'blue';
+
+    var li_qu = document.querySelector('li'); 
+    //li태그를 선택해 그중 하나만 반환한다
+    
+    li_qu.style.color = 'yellow';
+
+    var li_all = document.querySelectorAll('li');
+    //document.querySelectorAll -> 조건에 해당하는 태그를 유사배열로 반환  
+    for(var i in li_all){
+        li_all[i].style.color = 'yellow';
+    }
+
+</script>
+</body>
+</html>

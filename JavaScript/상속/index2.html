@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script>
+		function a(name){
+			this.name = name;
+			this.func = function(){
+				return 'My name is ' + this.name;
+			}
+		}
+
+		var n1 = new a('hi');
+		console.log(n1.func());
+
+		function a(){}
+
+		a.prototype.name = null;
+		a.prototype.func = function(){
+			return 'My name is ' + this.name;		
+		}
+
+		function b(name){
+			this.name = name;
+		}
+		b.prototype = new a ();
+
+
+		var n1 = new b('hi');
+		console.log(n1.func());
+
+		// new b 생성자를 실행하면 하나의 객체를 생성한다 그 안에는 a에 속성들을 저장해서 리턴해준다 
+		
+
+		function a(){}
+
+		a.prototype.name = null;
+		a.prototype.func = function(){
+			return 'My name is ' + this.name;		
+		}
+
+		function b(name){
+			this.name = name;
+		}
+		b.prototype = new a ();
+		b.prototype.coding = function(){
+			return "hello world";
+		}
+
+
+		var n1 = new b('hi');
+		console.log(n1.func());
+		console.log(n1.coding());
+	</script>
+</body>
+</html>

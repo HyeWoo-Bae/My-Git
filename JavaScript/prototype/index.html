@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script>
+		function ultra(){}
+		ultra.prototype.ultra_name = 'hi';
+
+		function Super(){}
+		Super.prototype = new ultra();
+
+		/*function sub(){}
+		sub.prototype = new Super();*/
+
+		var a = new Super();
+		console.log(a.ultra_name);
+	</script>
+</body>
+</html>
